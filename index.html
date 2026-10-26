@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A responsive virtual queue token management dashboard">
+<title>QueueFlow — Virtual Queue System</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar"><a class="logo" href="#"><span class="mark">Q</span> QueueFlow</a><p class="nav-label">WORKSPACE</p>
+<a class="nav active" href="#overview">▦ &nbsp; Overview</a><a class="nav" href="#get-token">＋ &nbsp; Issue a token</a><a class="nav" href="#queue">☷ &nbsp; Queue management</a>
+<div class="side-bottom"><div class="help"><span>✦</span><b>Keep things moving</b><p>Manage your service queue in one simple place.</p></div><div class="admin"><span class="avatar">QF</span><div><b>Queue Admin</b><small>Administrator</small></div></div></div></aside>
+<main id="overview">
+<header><div class="crumb">Workspace <span>/</span> <b>Overview</b></div><div class="online"><i></i> System operational <span class="avatar">QF</span></div></header>
+<section class="welcome"><div><p class="kicker">QUEUE MANAGEMENT</p><h1>Good day, Admin <span>✦</span></h1><p class="muted">Here’s what’s happening with your queue today.</p></div><div class="live-chip">◷ &nbsp; Live queue dashboard</div></section>
+<section class="stats">
+<div class="stat"><div class="stat-label">Now serving <span class="ico violet">◉</span></div><strong id="nowServing">—</strong><small><em class="violet-text">In service</em> &nbsp; Current token</small></div>
+<div class="stat"><div class="stat-label">Waiting in queue <span class="ico blue">☷</span></div><strong id="waitingCount">0</strong><small><em class="blue-text">Waiting</em> &nbsp; Tokens in line</small></div>
+<div class="stat"><div class="stat-label">Tokens issued <span class="ico green">↗</span></div><strong id="totalIssued">0</strong><small><em class="green-text">Today</em> &nbsp; Total generated</small></div>
+<div class="stat"><div class="stat-label">Next token <span class="ico amber">➜</span></div><strong id="nextToken">—</strong><small><em class="amber-text">Up next</em> &nbsp; Ready to call</small></div>
+</section>
+<section class="cards">
+<article class="panel" id="get-token"><div class="panel-title"><div><p class="kicker">QUICK ACTION</p><h2>Get your token</h2><p class="muted">Join the queue in one step.</p></div><span class="panel-icon">＋</span></div>
+<div class="ticket"><small>YOUR TOKEN NUMBER</small><strong id="previewNumber">Q—</strong><span>Your token will appear here</span></div>
+<button class="primary wide" id="generateToken">＋ &nbsp; Generate new token</button><p class="note">✓ &nbsp; Token details are saved in this browser.</p></article>
+<article class="panel"><div class="panel-title"><div><p class="kicker">TOKEN TRACKER</p><h2>Check your status</h2><p class="muted">Find your place in the queue.</p></div><span class="panel-icon blue-bg">⌕</span></div>
+<form id="statusForm"><label for="tokenSearch">Token number</label><div class="search"><input id="tokenSearch" placeholder="e.g. Q001" required><button type="submit">Search →</button></div></form>
+<div class="result" id="statusResult"><span class="result-icon">⌕</span><div><b>Ready when you are</b><p>Enter your token number to see its status.</p></div></div>
+<div class="legend"><span>● Waiting</span><span>● Serving</span><span>● Completed</span></div></article>
+</section>
+<section class="panel queue-panel" id="queue"><div class="queue-head"><div><p class="kicker">LIVE OPERATIONS</p><h2>Queue management</h2><p class="muted">Manage each token and keep things moving.</p></div><div class="actions"><button class="secondary" id="resetQueue">Reset queue</button><button class="primary" id="callNext">➜ &nbsp; Call next token</button></div></div>
+<div class="table-head"><b>Current queue <span id="tableCount">0</span></b><small><i></i> Updates instantly</small></div>
+<div class="table-scroll"><table><thead><tr><th>TOKEN</th><th>ISSUED AT</th><th>STATUS</th><th>POSITION</th><th>ACTIONS</th></tr></thead><tbody id="queueTable"><tr><td colspan="5" class="empty">No tokens yet. Generate a token to get started.</td></tr></tbody></table></div>
+<div class="table-foot"><span id="queueSummary">Showing 0 tokens</span><span>QueueFlow · Simple. Clear. Efficient.</span></div></section>
+<section class="banner"><span class="banner-icon">✦</span><div><b>Designed for smoother service</b><p>Issue tokens, monitor the queue, and serve people in order — without crowding around a counter.</p></div></section>
+<footer>© <span id="year"></span> QueueFlow · Student project demo <span>Built with HTML, CSS & JavaScript</span></footer>
+</main></div><div class="toast" id="toast" role="status" aria-live="polite"></div><script src="script.js"></script>
+</body></html>
